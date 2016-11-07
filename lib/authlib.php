@@ -397,6 +397,16 @@ class auth_plugin_base {
     }
 
     /**
+     * Subclasses should override this and return false if the
+     * subclass auth does not have config.
+     *
+     * @return boolean
+     */
+    public function has_config() {
+        return true;
+    }
+
+    /**
      * Prints a form for configuring this authentication plugin.
      *
      * This function is called from admin/auth.php, and outputs a full page with

@@ -6434,7 +6434,11 @@ class admin_setting_manageauths extends admin_setting {
         $usercount = $DB->count_records('user', array('auth'=>'manual', 'deleted'=>0));
         $table->data[] = array($displayname, $usercount, '', '', $settings, '', '');
         $displayname = $displayauths['nologin'];
-        $settings = "<a href=\"auth_config.php?auth=nologin\">{$txt->settings}</a>";
+
+        $settings = '';
+        if ((!empty($authplugins['nologin']) and $authplugins['nologin']->has_config())) {
+            $settings = "<a href=\"auth_config.php?auth=nologin\">{$txt->settings}</a>";
+        }
         $usercount = $DB->count_records('user', array('auth'=>'nologin', 'deleted'=>0));
         $table->data[] = array($displayname, $usercount, '', '', $settings, '', '');
 
@@ -6488,9 +6492,10 @@ class admin_setting_manageauths extends admin_setting {
             }
 
             // settings link
+            $settings = '';
             if (file_exists($CFG->dirroot.'/auth/'.$auth.'/settings.php')) {
                 $settings = "<a href=\"settings.php?section=authsetting$auth\">{$txt->settings}</a>";
-            } else {
+            } else if (!empty($authplugins[$auth]) and $authplugins[$auth]->has_config()) {
                 $settings = "<a href=\"auth_config.php?auth=$auth\">{$txt->settings}</a>";
             }
 

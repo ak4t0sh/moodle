@@ -103,6 +103,14 @@ class auth_plugin_nologin extends auth_plugin_base {
     function can_be_manually_set() {
         return true;
     }
+
+    /**
+     * This plugin does not have config
+     * @return bool false
+     */
+    public function has_config() {
+        return false;
+    }
 }
 
 

@@ -138,6 +138,14 @@ class auth_plugin_webservice extends auth_plugin_base {
     }
 
     /**
+     * This plugin does not have config
+     * @return bool false
+     */
+    public function has_config() {
+        return false;
+    }
+
+    /**
      * Prints a form for configuring this authentication plugin.
      *
      * This function is called from admin/auth.php, and outputs a full page with

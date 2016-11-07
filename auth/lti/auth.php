@@ -52,4 +52,12 @@ class auth_plugin_lti extends auth_plugin_base {
     public function user_login($username, $password) {
         return false;
     }
+
+    /**
+     * This plugin does not have config
+     * @return bool false
+     */
+    public function has_config() {
+        return false;
+    }
 }
