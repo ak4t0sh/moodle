@@ -397,6 +397,20 @@ class auth_plugin_base {
     }
 
     /**
+     * Determine if the plugin has a config
+     *
+     * @return boolean
+     */
+    public function has_config() {
+        global $CFG;
+        if (file_exists($CFG->dirroot.'/auth/'.$this->authtype.'/settings.php'))
+            return true;
+
+        // TODO handle config_form()
+        return false;
+    }
+
+    /**
      * Prints a form for configuring this authentication plugin.
      *
      * This function is called from admin/auth.php, and outputs a full page with

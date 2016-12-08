@@ -6488,10 +6488,13 @@ class admin_setting_manageauths extends admin_setting {
             }
 
             // settings link
-            if (file_exists($CFG->dirroot.'/auth/'.$auth.'/settings.php')) {
-                $settings = "<a href=\"settings.php?section=authsetting$auth\">{$txt->settings}</a>";
-            } else {
-                $settings = "<a href=\"auth_config.php?auth=$auth\">{$txt->settings}</a>";
+            $settings = '';
+            if ($authplugins[$auth]->has_config()) {
+                if (file_exists($CFG->dirroot.'/auth/'.$auth.'/settings.php')) {
+                    $settings = "<a href=\"settings.php?section=authsetting$auth\">{$txt->settings}</a>";
+                } else {
+                    $settings = "<a href=\"auth_config.php?auth=$auth\">{$txt->settings}</a>";
+                }
             }
 
             // Uninstall link.
