@@ -77,6 +77,7 @@ $string['errajaxsearch'] = 'Error when searching users';
 $string['erroreditenrolment'] = 'An error occurred while trying to edit a users enrolment';
 $string['errorenrolcohort'] = 'Error creating cohort sync enrolment instance in this course.';
 $string['errorenrolcohortusers'] = 'Error enrolling cohort members in this course.';
+$string['errorthresholdhigh'] = 'Notification threshold can not be greater than the enrolment duration.';
 $string['errorthresholdlow'] = 'Notification threshold must be at least 1 day.';
 $string['errorwithbulkoperation'] = 'There was an error while processing your bulk enrolment change.';
 $string['eventuserenrolmentcreated'] = 'User enrolled in course';

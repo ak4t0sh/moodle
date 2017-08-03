@@ -656,8 +656,8 @@ class enrol_manual_plugin extends enrol_plugin {
     public function edit_instance_validation($data, $files, $instance, $context) {
         $errors = array();
 
-        if ($data['expirynotify'] > 0 and $data['expirythreshold'] < 86400) {
-            $errors['expirythreshold'] = get_string('errorthresholdlow', 'core_enrol');
+        if ($data['expirynotify'] > 0 and $data['enrolperiod'] < $data['expirythreshold']) {
+            $errors['expirythreshold'] = get_string('errorthresholdhigh', 'core_enrol');
         }
 
         $validstatus = array_keys($this->get_status_options());

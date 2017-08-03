@@ -903,8 +903,8 @@ class enrol_self_plugin extends enrol_plugin {
             }
         }
 
-        if ($data['expirynotify'] > 0 and $data['expirythreshold'] < 86400) {
-            $errors['expirythreshold'] = get_string('errorthresholdlow', 'core_enrol');
+        if ($data['expirynotify'] > 0 and $data['enrolperiod'] < $data['expirythreshold']) {
+            $errors['expirythreshold'] = get_string('errorthresholdhigh', 'core_enrol');
         }
 
         // Now these ones are checked by quickforms, but we may be called by the upload enrolments tool, or a webservive.
