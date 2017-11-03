@@ -71,4 +71,5 @@ if ($ADMIN->fulltree) {
 
     $settings->add(new admin_setting_configduration('enrol_paypal/enrolperiod',
         get_string('enrolperiod', 'enrol_paypal'), get_string('enrolperiod_desc', 'enrol_paypal'), 0));
+    $settings->add(new admin_setting_confightmleditor('enrol_paypal/termsofsale', get_string('termsofsale', 'enrol_paypal'), get_string('termsofsale_desc', 'enrol_paypal'), ''));
 }

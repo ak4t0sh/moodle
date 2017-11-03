@@ -56,4 +56,6 @@ $string['pluginname_desc'] = 'The PayPal module allows you to set up paid course
 $string['sendpaymentbutton'] = 'Send payment via PayPal';
 $string['status'] = 'Allow PayPal enrolments';
 $string['status_desc'] = 'Allow users to use PayPal to enrol into a course by default.';
+$string['termsofsale'] = 'Terms of sale';
+$string['termsofsale_desc'] = 'Terms of sale';
 $string['unenrolselfconfirm'] = 'Do you really want to unenrol yourself from course "{$a}"?';
