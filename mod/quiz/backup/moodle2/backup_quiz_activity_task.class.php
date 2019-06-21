@@ -56,12 +56,12 @@ class backup_quiz_activity_task extends backup_activity_task {
         // Process all the annotated questions to calculate the question
         // categories needing to be included in backup for this activity
         // plus the categories belonging to the activity context itself.
-        $this->add_step(new backup_calculate_question_categories('activity_question_categories'));
+//        $this->add_step(new backup_calculate_question_categories('activity_question_categories'));
 
         // Clean backup_temp_ids table from questions. We already
         // have used them to detect question_categories and aren't
         // needed anymore.
-        $this->add_step(new backup_delete_temp_questions('clean_temp_questions'));
+ //       $this->add_step(new backup_delete_temp_questions('clean_temp_questions'));
     }
 
     /**

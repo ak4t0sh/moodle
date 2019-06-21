@@ -2277,6 +2277,7 @@ function question_page_type_list($pagetype, $parentcontext, $currentcontext) {
  * @return bool true if the module uses questions.
  */
 function question_module_uses_questions($modname) {
+/*
     if (plugin_supports('mod', $modname, FEATURE_USES_QUESTIONS)) {
         return true;
     }
@@ -2286,6 +2287,6 @@ function question_module_uses_questions($modname) {
         debugging("{$component} uses questions but doesn't declare FEATURE_USES_QUESTIONS", DEBUG_DEVELOPER);
         return true;
     }
-
+*/
     return false;
 }

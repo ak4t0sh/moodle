@@ -31,7 +31,7 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright  2010 onwards Eloy Lafuente (stronk7) {@link http://stronk7.com}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class restore_quiz_activity_structure_step extends restore_questions_activity_structure_step {
+class restore_quiz_activity_structure_step extends restore_activity_structure_step {
 
     /**
      * @var bool tracks whether the quiz contains at least one section. Before
@@ -56,15 +56,16 @@ class restore_quiz_activity_structure_step extends restore_questions_activity_st
 
         // A chance for access subplugings to set up their quiz data.
         $this->add_subplugin_structure('quizaccess', $quiz);
-
+/*
         $paths[] = new restore_path_element('quiz_question_instance',
                 '/activity/quiz/question_instances/question_instance');
         $paths[] = new restore_path_element('quiz_slot_tags',
                 '/activity/quiz/question_instances/question_instance/tags/tag');
         $paths[] = new restore_path_element('quiz_section', '/activity/quiz/sections/section');
         $paths[] = new restore_path_element('quiz_feedback', '/activity/quiz/feedbacks/feedback');
-        $paths[] = new restore_path_element('quiz_override', '/activity/quiz/overrides/override');
-
+ */
+       $paths[] = new restore_path_element('quiz_override', '/activity/quiz/overrides/override');
+/*
         if ($userinfo) {
             $paths[] = new restore_path_element('quiz_grade', '/activity/quiz/grades/grade');
 
@@ -91,7 +92,7 @@ class restore_quiz_activity_structure_step extends restore_questions_activity_st
                 $this->add_legacy_question_attempt_data($quizattempt, $paths);
             }
         }
-
+*/
         // Return the paths wrapped into standard activity structure.
         return $this->prepare_activity_structure($paths);
     }
